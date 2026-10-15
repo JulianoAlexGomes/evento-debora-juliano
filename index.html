@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2b211a">
+<title>Save the date · Débora &amp; Juliano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  /* mesma paleta do convite: terracota, bronze envelhecido e marfim */
+  :root {
+    --terracotta: #b0492c;
+    --bronze-light: #b9a07c;
+    --ivory: #fbf8f2;
+    --ink: #4f3a2e;
+    --text: #5e4f45;
+    --muted: #8f7d6c;
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .33 0 0 0 0 .26 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  [hidden] { display: none !important; }
+  body {
+    min-height: 100vh; min-height: 100svh; background: #2b211a; color: var(--text);
+    font-family: "Cormorant Garamond", Georgia, serif; -webkit-font-smoothing: antialiased;
+    display: flex; align-items: center; justify-content: center; padding: 20px 16px;
+  }
+  .script { font-family: "Pinyon Script", cursive; font-weight: 400; }
+  .caps { text-transform: uppercase; letter-spacing: .32em; }
+
+  /* cartão de papel com moldura dupla em bronze */
+  .card {
+    position: relative; width: 100%; max-width: 440px; padding: 64px 24px 56px; text-align: center;
+    background: radial-gradient(ellipse at 50% 35%, #fffdf9 0%, var(--ivory) 60%, #f1eadf 100%);
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  }
+  .card::before, .card::after { content: ""; position: absolute; pointer-events: none; border: 1px solid rgba(138,113,82,.5); }
+  .card::before { inset: 12px; }
+  .card::after { inset: 17px; border-color: rgba(138,113,82,.25); }
+  .grain { position: absolute; inset: 0; background: var(--grain); background-size: 220px; opacity: .18; pointer-events: none; }
+  .card > :not(.grain) { position: relative; }
+
+  /* hot stamping em cobre */
+  .foil {
+    background: linear-gradient(100deg, #7a4a2a 0%, #c4865a 18%, #f1d2b4 32%, #a2603a 48%, #dba57e 64%, #85502e 82%, #c98e62 100%);
+    background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 1px 0 rgba(255,255,255,.7)) drop-shadow(0 -.5px 0 rgba(90,55,20,.3));
+    animation: sheen 9s ease-in-out infinite;
+    padding: .25em .4em; margin: -.25em -.4em;
+  }
+  @keyframes sheen { 50% { background-position: 100% 0; } }
+
+  .kicker { font-size: 13px; color: var(--muted); }
+  .names { font-size: clamp(50px, 15vw, 64px); line-height: 1.1; margin-top: 18px; }
+  .rule { width: 46px; height: 1px; background: var(--bronze-light); margin: 22px auto; }
+  .date { font-size: 34px; font-weight: 500; letter-spacing: .14em; color: var(--terracotta); }
+  .city { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+  .actions { display: grid; gap: 12px; max-width: 280px; margin: 36px auto 0; }
+  .btn {
+    display: block; padding: 13px 20px; border: 1px solid var(--terracotta); background: transparent; cursor: pointer;
+    font: inherit; font-size: 15px; letter-spacing: .24em; text-transform: uppercase; text-decoration: none;
+    color: var(--terracotta); transition: background .3s, color .3s;
+  }
+  .btn:hover, .btn.solid { background: var(--terracotta); color: var(--ivory); }
+  .btn.solid:hover { background: #8e3a22; }
+  .btn:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
+
+  /* contador até a liberação do convite */
+  .wait { margin-top: 34px; }
+  .wait .lead { font-size: 20px; font-style: italic; }
+  .countdown { display: flex; justify-content: center; gap: 2px; margin-top: 16px; font-variant-numeric: tabular-nums; }
+  .countdown .unit { width: 58px; }
+  .countdown .num { font-size: 40px; line-height: 1; color: var(--ink); }
+  .countdown .lbl { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+  .countdown .sep { font-size: 34px; line-height: 1; color: var(--bronze-light); }
+  .wait .release { font-size: 15px; color: var(--terracotta); margin-top: 18px; }
+  .back { margin-top: 18px; border: 0; background: none; padding: 4px 8px; font: inherit; font-size: 17px; font-style: italic; color: var(--muted); cursor: pointer; }
+  .back:hover { color: var(--terracotta); }
+
+  .fade { animation: fade .6s ease both; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="grain"></div>
+    <div class="kicker caps">Save the date</div>
+    <h1 class="names script foil">Débora &amp; Juliano</h1>
+    <div class="rule"></div>
+    <div class="date">10 · 04 · 2027</div>
+    <div class="city caps">São Leopoldo · RS</div>
+
+    <div class="actions" id="actions">
+      <button class="btn solid" type="button" id="open">Ver convite</button>
+      <a class="btn" id="calLink" target="_blank" rel="noopener">Salvar na agenda</a>
+    </div>
+
+    <div class="wait fade" id="wait" hidden>
+      <p class="lead">O convite será liberado em</p>
+      <div class="countdown" aria-live="polite">
+        <div class="unit"><div class="num" id="cd-d">00</div><div class="lbl">Dias</div></div><div class="sep">:</div>
+        <div class="unit"><div class="num" id="cd-h">00</div><div class="lbl">Horas</div></div><div class="sep">:</div>
+        <div class="unit"><div class="num" id="cd-m">00</div><div class="lbl">Min</div></div><div class="sep">:</div>
+        <div class="unit"><div class="num" id="cd-s">00</div><div class="lbl">Seg</div></div>
+      </div>
+      <p class="release caps">1º de março de 2027</p>
+      <button class="back" type="button" id="back">← voltar</button>
+    </div>
+  </main>
+
+<script>
+  const CONFIG = {
+    title: "Casamento Débora & Juliano",
+    date: new Date("2027-04-10T19:00:00-03:00"),        // início do evento
+    city: "São Leopoldo · RS",
+    releaseDate: new Date("2027-03-01T00:00:00-03:00"), // a partir daqui o botão abre o convite
+    invite: atob("aHR0cHM6Ly9qdWxpYW5vYWxleGdvbWVzLmdpdGh1Yi5pby9jYXNhbWVudG8tZGVib3JhLWp1bGlhbm8vY29udml0ZS1rcmFoZmFhbTdseXUuaHRtbA=="),
+  };
+  const $ = id => document.getElementById(id);
+  const pad = n => String(n).padStart(2, "0");
+
+  // Google Agenda: das 19h até as 3h do dia seguinte
+  const ics = t => t.toISOString().replace(/[-:]|\.\d{3}/g, "");
+  $("calLink").href = "https://calendar.google.com/calendar/render?" + new URLSearchParams({
+    action: "TEMPLATE", text: CONFIG.title, location: CONFIG.city,
+    dates: `${ics(CONFIG.date)}/${ics(new Date(+CONFIG.date + 8 * 3600e3))}`,
+  });
+
+  // antes da liberação o botão mostra só a contagem; depois, abre o convite
+  const cd = ["cd-d", "cd-h", "cd-m", "cd-s"].map($);
+  let timer = null;
+  function tick() {
+    const t = Math.max(0, Math.floor((CONFIG.releaseDate - Date.now()) / 1000));
+    if (!t) { location.href = CONFIG.invite; return; }
+    [Math.floor(t / 86400), Math.floor(t / 3600) % 24, Math.floor(t / 60) % 60, t % 60]
+      .forEach((v, i) => cd[i].textContent = pad(v));
+  }
+  $("open").addEventListener("click", () => {
+    if (Date.now() >= CONFIG.releaseDate) { location.href = CONFIG.invite; return; }
+    $("actions").hidden = true; $("wait").hidden = false;
+    tick(); timer = setInterval(tick, 1000);
+  });
+  $("back").addEventListener("click", () => {
+    clearInterval(timer); $("wait").hidden = true; $("actions").hidden = false;
+  });
+</script>
+</body>
+</html>
