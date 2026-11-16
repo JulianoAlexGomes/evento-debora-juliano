@@ -3,49 +3,49 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#2b211a">
+<meta name="theme-color" content="#141212">
 <title>Save the date · Débora &amp; Juliano</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
-  /* mesma paleta do convite: terracota, bronze envelhecido e marfim */
+  /* mesma paleta do convite: base preta suave com champanhe, vermelho, rosa e branco */
   :root {
-    --terracotta: #b0492c;
-    --bronze-light: #b9a07c;
-    --ivory: #fbf8f2;
-    --ink: #4f3a2e;
-    --text: #5e4f45;
-    --muted: #8f7d6c;
-    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .33 0 0 0 0 .26 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    --terracotta: #e6cfa6;
+    --bronze-light: #a8916c;
+    --ivory: #1f1c1c;
+    --ink: #fdf8f1;
+    --text: #ece4da;
+    --muted: #bcb1a5;
+    --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .48 0 0 0 0 .46 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   [hidden] { display: none !important; }
   body {
-    min-height: 100vh; min-height: 100svh; background: #2b211a; color: var(--text);
+    min-height: 100vh; min-height: 100svh; background: #141212; color: var(--text);
     font-family: "Cormorant Garamond", Georgia, serif; -webkit-font-smoothing: antialiased;
     display: flex; align-items: center; justify-content: center; padding: 20px 16px;
   }
   .script { font-family: "Pinyon Script", cursive; font-weight: 400; }
   .caps { text-transform: uppercase; letter-spacing: .32em; }
 
-  /* cartão de papel com moldura dupla em bronze */
+  /* cartão grafite com moldura dupla em champanhe */
   .card {
     position: relative; width: 100%; max-width: 440px; padding: 64px 24px 56px; text-align: center;
-    background: radial-gradient(ellipse at 50% 35%, #fffdf9 0%, var(--ivory) 60%, #f1eadf 100%);
-    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    background: radial-gradient(ellipse at 50% 35%, #3a3434 0%, #2a2626 60%, #221f1f 100%);
+    box-shadow: 0 20px 60px rgba(0,0,0,.6);
   }
-  .card::before, .card::after { content: ""; position: absolute; pointer-events: none; border: 1px solid rgba(138,113,82,.5); }
+  .card::before, .card::after { content: ""; position: absolute; pointer-events: none; border: 1px solid rgba(230,207,166,.55); }
   .card::before { inset: 12px; }
-  .card::after { inset: 17px; border-color: rgba(138,113,82,.25); }
-  .grain { position: absolute; inset: 0; background: var(--grain); background-size: 220px; opacity: .18; pointer-events: none; }
+  .card::after { inset: 17px; border-color: rgba(230,207,166,.25); }
+  .grain { position: absolute; inset: 0; background: var(--grain); background-size: 220px; opacity: .12; pointer-events: none; }
   .card > :not(.grain) { position: relative; }
 
-  /* hot stamping em cobre */
+  /* hot stamping em champanhe */
   .foil {
-    background: linear-gradient(100deg, #7a4a2a 0%, #c4865a 18%, #f1d2b4 32%, #a2603a 48%, #dba57e 64%, #85502e 82%, #c98e62 100%);
+    background: linear-gradient(100deg, #a8865a 0%, #e6cfa6 18%, #fff6e6 32%, #c4a676 48%, #f2e0bf 64%, #a07e52 82%, #e2c79c 100%);
     background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
-    filter: drop-shadow(0 1px 0 rgba(255,255,255,.7)) drop-shadow(0 -.5px 0 rgba(90,55,20,.3));
+    filter: drop-shadow(0 1px 0 rgba(0,0,0,.6)) drop-shadow(0 -.5px 0 rgba(255,255,255,.15));
     animation: sheen 9s ease-in-out infinite;
     padding: .25em .4em; margin: -.25em -.4em;
   }
@@ -53,7 +53,12 @@
 
   .kicker { font-size: 13px; color: var(--muted); }
   .names { font-size: clamp(50px, 15vw, 64px); line-height: 1.1; margin-top: 18px; }
-  .rule { width: 46px; height: 1px; background: var(--bronze-light); margin: 22px auto; }
+  .rule { position: relative; width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--bronze-light) 30%, transparent 44%, transparent 56%, var(--bronze-light) 70%, transparent); margin: 22px auto; }
+  .rule svg { position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; transform: translate(-50%, -50%); }
+
+  /* pétalas vermelhas, rosa, brancas e champanhe caindo */
+  .petal { position: fixed; top: -20px; z-index: 5; pointer-events: none; width: 11px; height: 8px; border-radius: 80% 0 80% 0; opacity: .85; animation: fall linear forwards; will-change: transform; }
+  @keyframes fall { to { transform: translate(var(--dx), 110vh) rotate(var(--rot)); } }
   .date { font-size: 34px; font-weight: 500; letter-spacing: .14em; color: var(--terracotta); }
   .city { font-size: 13px; color: var(--muted); margin-top: 10px; }
 
@@ -64,7 +69,7 @@
     color: var(--terracotta); transition: background .3s, color .3s;
   }
   .btn:hover, .btn.solid { background: var(--terracotta); color: var(--ivory); }
-  .btn.solid:hover { background: #8e3a22; }
+  .btn.solid:hover { background: #c9a970; border-color: #c9a970; }
   .btn:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 3px; }
 
   /* contador até a liberação do convite */
@@ -75,7 +80,7 @@
   .countdown .num { font-size: 40px; line-height: 1; color: var(--ink); }
   .countdown .lbl { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
   .countdown .sep { font-size: 34px; line-height: 1; color: var(--bronze-light); }
-  .wait .release { font-size: 15px; color: var(--terracotta); margin-top: 18px; }
+  .wait .release { font-size: 15px; color: #f2a9b8; margin-top: 18px; }
   .back { margin-top: 18px; border: 0; background: none; padding: 4px 8px; font: inherit; font-size: 17px; font-style: italic; color: var(--muted); cursor: pointer; }
   .back:hover { color: var(--terracotta); }
 
@@ -89,7 +94,7 @@
     <div class="grain"></div>
     <div class="kicker caps">Save the date</div>
     <h1 class="names script foil">Débora &amp; Juliano</h1>
-    <div class="rule"></div>
+    <div class="rule"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14 C3 10.5 1.5 8 1.5 5.6 A3.2 3.2 0 0 1 8 4.2 A3.2 3.2 0 0 1 14.5 5.6 C14.5 8 13 10.5 8 14Z" fill="#c41e3a"/></svg></div>
     <div class="date">10 · 04 · 2027</div>
     <div class="city caps">São Leopoldo · RS</div>
 
@@ -146,6 +151,23 @@
   $("back").addEventListener("click", () => {
     clearInterval(timer); $("wait").hidden = true; $("actions").hidden = false;
   });
+
+  // pétalas caindo suavemente
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const petalColors = ["#b3122e", "#d9304a", "#e8738a", "#f4b6c2", "#ffffff", "#e6cfa6"];
+    setInterval(() => {
+      if (document.hidden || document.querySelectorAll(".petal").length > 40) return;
+      const p = document.createElement("div");
+      p.className = "petal";
+      p.style.left = Math.random() * innerWidth + "px";
+      p.style.background = petalColors[Math.floor(Math.random() * petalColors.length)];
+      p.style.setProperty("--dx", (Math.random() * 120 - 60) + "px");
+      p.style.setProperty("--rot", (Math.random() * 720 - 360) + "deg");
+      p.style.animationDuration = 7 + Math.random() * 5 + "s";
+      p.addEventListener("animationend", () => p.remove());
+      document.body.appendChild(p);
+    }, 900);
+  }
 </script>
 </body>
 </html>
